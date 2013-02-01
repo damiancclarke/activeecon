@@ -20,7 +20,7 @@ from urllib2 import urlopen, URLError, HTTPError
 import re
 import webbrowser
 
-papers = open("NBER_papers.txt", "w")
+papers = open("NBER_papers_IJ.txt", 'r+')
 
 url1 = 'http://www.nber.org/jel/'
 url2 = 'http://www.nber.org/papers/'
@@ -33,7 +33,8 @@ savefile2 = "../txts/"
 #*******************************************************************************
 # (2) For each JEL code get all relevant JEL subcode
 #*******************************************************************************
-JEL = "ABCDEFGHIJKLMNOPQRZ"
+#JEL = "ABCDEFGHIJKLMNOPQRZ"
+JEL = "IJ"
 for x in JEL:
 	if not os.path.exists(savefile1 + "/" + x): # make files to save pdfs
 		os.makedirs(savefile1 + "/" + x)
@@ -94,7 +95,8 @@ for x in JEL:
 
 papers.close()
 
-#*******************************************************************************
-# (5) Get references and reference years from txts
-#*******************************************************************************
+		#***********************************************************************
+		# (5) Get references and reference years from txts
+		#***********************************************************************
+
 
