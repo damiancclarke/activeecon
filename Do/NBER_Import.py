@@ -94,31 +94,4 @@ for x in JEL:
 			#system = "pdf2txt.py -o " + savename2 + " " + savename1
 			os.system(system)
 
-
-		#***********************************************************************
-		# (5) Get references and reference years from txts
-		#***********************************************************************
-		if not os.path.exists("../refs"): # make files to save biblio txts
-			os.makedirs("../refs")
-		if not os.path.exists("../refs/" + x): # make files to save biblio txts
-			os.makedirs("../refs/" + x)
-		if not os.path.exists("../refs/" + x + "/" + subJEL1): # biblio files
-			os.makedirs("../refs/" + x + "/" + subJEL1)
-		
-		for y in range(1991,2013):
-			yearname = "../refs/" + x + "/" + subJEL1 + "/Result" + year + ".txt"
-			Result = open(yearname, "w") # this is the file which will give final output
-			
-			if y==yname:
-				txtpaperread = open(savename2, 'r').read()
-				References = re.search('References', txtpaperread)
-				if References!=None:
-					Refposition = References.start()
-					Result.write(txtpaperread[Refposition:Refposition+5000] + "\n")
-				REFERENCES = re.search('REFERENCES', txtpaperread)
-				if REFERENCES!=None:
-					REFposition = REFERENCES.start()
-					Result.write(txtpaperread[REFposition:REFposition+5000] + "\n")			
-
-			Result.close()
 papers.close()

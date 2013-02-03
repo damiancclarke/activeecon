@@ -23,296 +23,54 @@ for x in JEL:
 	if not os.path.exists("../refs/" + x): # make files to save biblio txts
 		os.makedirs("../refs/" + x)
 
+d = {}
+for line1 in open('JEL_codes.txt'):
+	dictname = '../refs/' + line1[0:1] + '/Result' + line1[0:2] + '.txt'
+	d[line1[0:2]] = dictname
 
-##THESE FOLLOWING LINES WERE AUTOMATED AND IMPORTED FROM ANOTHER SCRIPT
-##I TRIED THIS WITH A DICTIONARY AND A LOOP BUT IT WASN'T GOOD.  REVIEW THIS.
-ResultA0= open("../refs/A/ResultA0.txt", "w")
-ResultA1= open("../refs/A/ResultA1.txt", "w")
-ResultA2= open("../refs/A/ResultA2.txt", "w")
-ResultB0= open("../refs/B/ResultB0.txt", "w")
-ResultB1= open("../refs/B/ResultB1.txt", "w")
-ResultB2= open("../refs/B/ResultB2.txt", "w")
-ResultB3= open("../refs/B/ResultB3.txt", "w")
-ResultB4= open("../refs/B/ResultB4.txt", "w")
-ResultC0= open("../refs/C/ResultC0.txt", "w")
-ResultC1= open("../refs/C/ResultC1.txt", "w")
-ResultC2= open("../refs/C/ResultC2.txt", "w")
-ResultC3= open("../refs/C/ResultC3.txt", "w")
-ResultC4= open("../refs/C/ResultC4.txt", "w")
-ResultC5= open("../refs/C/ResultC5.txt", "w")
-ResultC6= open("../refs/C/ResultC6.txt", "w")
-ResultC7= open("../refs/C/ResultC7.txt", "w")
-ResultC8= open("../refs/C/ResultC8.txt", "w")
-ResultC9= open("../refs/C/ResultC9.txt", "w")
-ResultD0= open("../refs/D/ResultD0.txt", "w")
-ResultD1= open("../refs/D/ResultD1.txt", "w")
-ResultD2= open("../refs/D/ResultD2.txt", "w")
-ResultD3= open("../refs/D/ResultD3.txt", "w")
-ResultD4= open("../refs/D/ResultD4.txt", "w")
-ResultD5= open("../refs/D/ResultD5.txt", "w")
-ResultD6= open("../refs/D/ResultD6.txt", "w")
-ResultD7= open("../refs/D/ResultD7.txt", "w")
-ResultD8= open("../refs/D/ResultD8.txt", "w")
-ResultD9= open("../refs/D/ResultD9.txt", "w")
-ResultE0= open("../refs/E/ResultE0.txt", "w")
-ResultE1= open("../refs/E/ResultE1.txt", "w")
-ResultE2= open("../refs/E/ResultE2.txt", "w")
-ResultE3= open("../refs/E/ResultE3.txt", "w")
-ResultE4= open("../refs/E/ResultE4.txt", "w")
-ResultE5= open("../refs/E/ResultE5.txt", "w")
-ResultE6= open("../refs/E/ResultE6.txt", "w")
-ResultF0= open("../refs/F/ResultF0.txt", "w")
-ResultF1= open("../refs/F/ResultF1.txt", "w")
-ResultF2= open("../refs/F/ResultF2.txt", "w")
-ResultF3= open("../refs/F/ResultF3.txt", "w")
-ResultF4= open("../refs/F/ResultF4.txt", "w")
-ResultG0= open("../refs/G/ResultG0.txt", "w")
-ResultG1= open("../refs/G/ResultG1.txt", "w")
-ResultG2= open("../refs/G/ResultG2.txt", "w")
-ResultG3= open("../refs/G/ResultG3.txt", "w")
-ResultH0= open("../refs/H/ResultH0.txt", "w")
-ResultH1= open("../refs/H/ResultH1.txt", "w")
-ResultH2= open("../refs/H/ResultH2.txt", "w")
-ResultH3= open("../refs/H/ResultH3.txt", "w")
-ResultH4= open("../refs/H/ResultH4.txt", "w")
-ResultH5= open("../refs/H/ResultH5.txt", "w")
-ResultH6= open("../refs/H/ResultH6.txt", "w")
-ResultH7= open("../refs/H/ResultH7.txt", "w")
-ResultH8= open("../refs/H/ResultH8.txt", "w")
-ResultI0= open("../refs/I/ResultI0.txt", "w")
-ResultI1= open("../refs/I/ResultI1.txt", "w")
-ResultI2= open("../refs/I/ResultI2.txt", "w")
-ResultI3= open("../refs/I/ResultI3.txt", "w")
-ResultJ0= open("../refs/J/ResultJ0.txt", "w")
-ResultJ1= open("../refs/J/ResultJ1.txt", "w")
-ResultJ2= open("../refs/J/ResultJ2.txt", "w")
-ResultJ3= open("../refs/J/ResultJ3.txt", "w")
-ResultJ4= open("../refs/J/ResultJ4.txt", "w")
-ResultJ5= open("../refs/J/ResultJ5.txt", "w")
-ResultJ6= open("../refs/J/ResultJ6.txt", "w")
-ResultJ7= open("../refs/J/ResultJ7.txt", "w")
-ResultK0= open("../refs/K/ResultK0.txt", "w")
-ResultK1= open("../refs/K/ResultK1.txt", "w")
-ResultK2= open("../refs/K/ResultK2.txt", "w")
-ResultK3= open("../refs/K/ResultK3.txt", "w")
-ResultK4= open("../refs/K/ResultK4.txt", "w")
-ResultL0= open("../refs/L/ResultL0.txt", "w")
-ResultL1= open("../refs/L/ResultL1.txt", "w")
-ResultL2= open("../refs/L/ResultL2.txt", "w")
-ResultL3= open("../refs/L/ResultL3.txt", "w")
-ResultL4= open("../refs/L/ResultL4.txt", "w")
-ResultL5= open("../refs/L/ResultL5.txt", "w")
-ResultL6= open("../refs/L/ResultL6.txt", "w")
-ResultL7= open("../refs/L/ResultL7.txt", "w")
-ResultL8= open("../refs/L/ResultL8.txt", "w")
-ResultL9= open("../refs/L/ResultL9.txt", "w")
-ResultM0= open("../refs/M/ResultM0.txt", "w")
-ResultM1= open("../refs/M/ResultM1.txt", "w")
-ResultM2= open("../refs/M/ResultM2.txt", "w")
-ResultM3= open("../refs/M/ResultM3.txt", "w")
-ResultM4= open("../refs/M/ResultM4.txt", "w")
-ResultN0= open("../refs/N/ResultN0.txt", "w")
-ResultN1= open("../refs/N/ResultN1.txt", "w")
-ResultN2= open("../refs/N/ResultN2.txt", "w")
-ResultN3= open("../refs/N/ResultN3.txt", "w")
-ResultN4= open("../refs/N/ResultN4.txt", "w")
-ResultN5= open("../refs/N/ResultN5.txt", "w")
-ResultN6= open("../refs/N/ResultN6.txt", "w")
-ResultN7= open("../refs/N/ResultN7.txt", "w")
-ResultO0= open("../refs/O/ResultO0.txt", "w")
-ResultO1= open("../refs/O/ResultO1.txt", "w")
-ResultO2= open("../refs/O/ResultO2.txt", "w")
-ResultO3= open("../refs/O/ResultO3.txt", "w")
-ResultO4= open("../refs/O/ResultO4.txt", "w")
-ResultO5= open("../refs/O/ResultO5.txt", "w")
-ResultP0= open("../refs/P/ResultP0.txt", "w")
-ResultP1= open("../refs/P/ResultP1.txt", "w")
-ResultP2= open("../refs/P/ResultP2.txt", "w")
-ResultP3= open("../refs/P/ResultP3.txt", "w")
-ResultP4= open("../refs/P/ResultP4.txt", "w")
-ResultP5= open("../refs/P/ResultP5.txt", "w")
-ResultQ0= open("../refs/Q/ResultQ0.txt", "w")
-ResultQ1= open("../refs/Q/ResultQ1.txt", "w")
-ResultQ2= open("../refs/Q/ResultQ2.txt", "w")
-ResultQ3= open("../refs/Q/ResultQ3.txt", "w")
-ResultQ4= open("../refs/Q/ResultQ4.txt", "w")
-ResultQ5= open("../refs/Q/ResultQ5.txt", "w")
-ResultQ0= open("../refs/Q/ResultQ0.txt", "w")
-ResultQ1= open("../refs/Q/ResultQ1.txt", "w")
-ResultQ2= open("../refs/Q/ResultQ2.txt", "w")
-ResultQ3= open("../refs/Q/ResultQ3.txt", "w")
-ResultQ4= open("../refs/Q/ResultQ4.txt", "w")
-ResultQ5= open("../refs/Q/ResultQ5.txt", "w")
-ResultR0= open("../refs/R/ResultR0.txt", "w")
-ResultR1= open("../refs/R/ResultR1.txt", "w")
-ResultR2= open("../refs/R/ResultR2.txt", "w")
-ResultR3= open("../refs/R/ResultR3.txt", "w")
-ResultR4= open("../refs/R/ResultR4.txt", "w")
-ResultR5= open("../refs/R/ResultR5.txt", "w")
-ResultZ0= open("../refs/Z/ResultZ0.txt", "w")
-ResultZ1= open("../refs/Z/ResultZ1.txt", "w")
 
-#*******************************************************************************
-# (2) Strip data from bibliography
-#*******************************************************************************
-for line in open("NBER_papers.txt"):
-	subfolder = line[0:2]
-	folder = line[0:1]
-	p = re.findall('w[0-9]+', line)	
-	year = line[-11:-7]
-	print year
-	name = 'Result' + subfolder
-	for a in p:
-		papercode = a
-		print papercode	
+for key, value in d.iteritems():
+	key = open(value, 'w')
 
-	for y in range(2000,2014):	
-#		print y, year
-		if str(y) == str(year):
-			print 'yes'
-			txtpaper = "../" + "pdfs" + "/" + folder + "/" + subfolder + "/" + papercode + ".txt"
-			txtpaperread = open(txtpaper, 'r').read()
+	#***************************************************************************
+	# (2) Strip data from bibliography
+	#***************************************************************************
+	for line in open("NBER_papers.txt"):
+		subfolder = line[0:2]
+		folder = line[0:1]
+		p = re.findall('w[0-9]+', line)	
+		year = line[-11:-7]
+		name = 'Result' + subfolder
+		for a in p:
+			papercode = a
+
+		for y in range(2000,2014):	
+			if str(y) == str(year) and line1[0:2]==line[0:2]:
+				txtpaper = "../" + "pdfs" + "/" + folder + "/" + subfolder + "/" + papercode + ".txt"
+				txtpaperread = open(txtpaper, 'r').read()
 	
-			#***************************************************************************
-			# I just have to make these reasonably poorly stripped bibliographies be
-			# written into the files ResultA0, ResultA1.  make a name of 
-			#***************************************************************************
-			references = re.search('\b references', txtpaperread)
-			if references!=None:
-				refposition=references.start()
-		#		print txtpaperread[refposition:refposition+10000]
-			References = re.search('References', txtpaperread)
-			if References!=None:
-				Refposition = References.start()
-				print txtpaperread[Refposition:Refposition+5000]
-				ResultA0.write(txtpaperread[Refposition:Refposition+5000] + "\n")
-			REFERENCES = re.search('REFERENCES', txtpaperread)
-			if REFERENCES!=None:
-				REFposition = REFERENCES.start()
-				ResultA0.write(txtpaperread[REFposition:REFposition+5000] + "\n")
-
-ResultA0.close()
-ResultA1.close()
-ResultA2.close()
-ResultB0.close()
-ResultB1.close()
-ResultB2.close()
-ResultB3.close()
-ResultB4.close()
-ResultC0.close()
-ResultC1.close()
-ResultC2.close()
-ResultC3.close()
-ResultC4.close()
-ResultC5.close()
-ResultC6.close()
-ResultC7.close()
-ResultC8.close()
-ResultC9.close()
-ResultD0.close()
-ResultD1.close()
-ResultD2.close()
-ResultD3.close()
-ResultD4.close()
-ResultD5.close()
-ResultD6.close()
-ResultD7.close()
-ResultD8.close()
-ResultD9.close()
-ResultE0.close()
-ResultE1.close()
-ResultE2.close()
-ResultE3.close()
-ResultE4.close()
-ResultE5.close()
-ResultE6.close()
-ResultF0.close()
-ResultF1.close()
-ResultF2.close()
-ResultF3.close()
-ResultF4.close()
-ResultG0.close()
-ResultG1.close()
-ResultG2.close()
-ResultG3.close()
-ResultH0.close()
-ResultH1.close()
-ResultH2.close()
-ResultH3.close()
-ResultH4.close()
-ResultH5.close()
-ResultH6.close()
-ResultH7.close()
-ResultH8.close()
-ResultI0.close()
-ResultI1.close()
-ResultI2.close()
-ResultI3.close()
-ResultJ0.close()
-ResultJ1.close()
-ResultJ2.close()
-ResultJ3.close()
-ResultJ4.close()
-ResultJ5.close()
-ResultJ6.close()
-ResultJ7.close()
-ResultK0.close()
-ResultK1.close()
-ResultK2.close()
-ResultK3.close()
-ResultK4.close()
-ResultL0.close()
-ResultL1.close()
-ResultL2.close()
-ResultL3.close()
-ResultL4.close()
-ResultL5.close()
-ResultL6.close()
-ResultL7.close()
-ResultL8.close()
-ResultL9.close()
-ResultM0.close()
-ResultM1.close()
-ResultM2.close()
-ResultM3.close()
-ResultM4.close()
-ResultN0.close()
-ResultN1.close()
-ResultN2.close()
-ResultN3.close()
-ResultN4.close()
-ResultN5.close()
-ResultN6.close()
-ResultN7.close()
-ResultO0.close()
-ResultO1.close()
-ResultO2.close()
-ResultO3.close()
-ResultO4.close()
-ResultO5.close()
-ResultP0.close()
-ResultP1.close()
-ResultP2.close()
-ResultP3.close()
-ResultP4.close()
-ResultP5.close()
-ResultQ0.close()
-ResultQ1.close()
-ResultQ2.close()
-ResultQ3.close()
-ResultQ4.close()
-ResultQ5.close()
-ResultQ0.close()
-ResultQ1.close()
-ResultQ2.close()
-ResultQ3.close()
-ResultQ4.close()
-ResultQ5.close()
-ResultR0.close()
-ResultR1.close()
-ResultR2.close()
-ResultR3.close()
-ResultR4.close()
-ResultR5.close()
-ResultZ0.close()
-ResultZ1.close()
+				#***************************************************************
+				# I just have to make these reasonably poorly stripped bibliographies be
+				# written into the files ResultA0, ResultA1.  make a name of 
+				#***************************************************************
+				references = None
+				References = None
+				REFERENCES = None
+				
+				references = re.search('\b references', txtpaperread)
+				if references!=None:
+					refposition=references.start()
+				References = re.search('References', txtpaperread)
+				if References!=None:
+					Refposition = References.start()
+#					print txtpaperread[Refposition:Refposition+5000]
+					key.write(txtpaperread[Refposition:Refposition+5000] + "\n")
+				REFERENCES = re.search('REFERENCES', txtpaperread)
+				if REFERENCES!=None:
+					REFposition = REFERENCES.start()
+					key.write(txtpaperread[REFposition:REFposition+5000] + "\n")
+				
+				if REFERENCES==None and References==None:
+					print subfolder, papercode
+	
+	key.close()
