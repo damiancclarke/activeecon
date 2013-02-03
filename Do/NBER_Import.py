@@ -20,7 +20,7 @@ from urllib2 import urlopen, URLError, HTTPError
 import re
 import webbrowser
 
-papers = open("NBER_papers_IJ.txt", 'r+')
+#papers = open("NBER_papers.txt", 'w')
 
 url1 = 'http://www.nber.org/jel/'
 url2 = 'http://www.nber.org/papers/'
@@ -75,6 +75,7 @@ for x in JEL:
 
 			for d in date: # should be one date
 				dname = d[36:-1]
+				yname = d[36:39]
 
 			download = re.findall('<meta name="citation_pdf_url" content="http://www.nber.org/papers/w[0-9]*.pdf"', openpaper)
 			for w in download: # must be one url
@@ -93,10 +94,31 @@ for x in JEL:
 			#system = "pdf2txt.py -o " + savename2 + " " + savename1
 			os.system(system)
 
-papers.close()
 
 		#***********************************************************************
 		# (5) Get references and reference years from txts
 		#***********************************************************************
+		if not os.path.exists("../refs"): # make files to save biblio txts
+			os.makedirs("../refs")
+		if not os.path.exists("../refs/" + x): # make files to save biblio txts
+			os.makedirs("../refs/" + x)
+		if not os.path.exists("../refs/" + x + "/" + subJEL1): # biblio files
+			os.makedirs("../refs/" + x + "/" + subJEL1)
+		
+		for y in range(1991,2013):
+			yearname = "../refs/" + x + "/" + subJEL1 + "/Result" + year + ".txt"
+			Result = open(yearname, "w") # this is the file which will give final output
+			
+			if y==yname:
+				txtpaperread = open(savename2, 'r').read()
+				References = re.search('References', txtpaperread)
+				if References!=None:
+					Refposition = References.start()
+					Result.write(txtpaperread[Refposition:Refposition+5000] + "\n")
+				REFERENCES = re.search('REFERENCES', txtpaperread)
+				if REFERENCES!=None:
+					REFposition = REFERENCES.start()
+					Result.write(txtpaperread[REFposition:REFposition+5000] + "\n")			
 
-
+			Result.close()
+papers.close()
